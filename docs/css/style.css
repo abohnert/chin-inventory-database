@@ -26,6 +26,10 @@ body {
     padding: 0 1rem;
 }
 
+.hidden {
+    display: none !important;
+}
+
 header {
     text-align: center;
     padding: 2rem 0;
@@ -46,7 +50,7 @@ header h1 {
 
 .language-selector {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .language-selector label {
@@ -61,6 +65,29 @@ header h1 {
     border-radius: 4px;
     background: var(--bg-secondary);
     min-width: 250px;
+}
+
+.dialect-selector {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dialect-selector.hidden {
+    display: none;
+}
+
+.dialect-selector label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+#dialect-select {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-secondary);
+    min-width: 200px;
 }
 
 .charts.hidden {
@@ -94,6 +121,7 @@ header h1 {
     padding: 1.5rem;
     margin-bottom: 2rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow-x: auto;
 }
 
 .chart-section h3 {
@@ -107,14 +135,16 @@ header h1 {
 .ipa-chart.consonant-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    table-layout: fixed;
 }
 
 .ipa-chart.consonant-table th,
 .ipa-chart.consonant-table td {
-    border: 1px solid var(--border-color);
-    padding: 0.4rem 0.3rem;
+    border: 1px solid #333;
+    padding: 0.55rem 0.45rem;
     text-align: center;
+    vertical-align: middle;
 }
 
 .ipa-chart.consonant-table th {
@@ -122,72 +152,80 @@ header h1 {
     font-weight: 600;
 }
 
+.ipa-chart.consonant-table .manner-axis-header {
+    width: 8rem;
+}
+
 .ipa-chart.consonant-table .place-header {
-    background: #e6f0ff;
+    background: var(--header-bg);
+    font-size: 1rem;
 }
 
 .ipa-chart.consonant-table .manner-header {
-    background: #f0f0f0;
-    font-style: italic;
+    background: var(--header-bg);
+    text-align: left;
+    font-size: 0.95rem;
+    width: 8rem;
+}
+
+.ipa-chart.consonant-table .voicing-header {
+    background: #f4f4f4;
+    font-size: 0.75rem;
+    font-weight: 500;
 }
 
 .ipa-chart.consonant-table td {
-    min-width: 3rem;
-    background: var(--cell-bg);
+    min-width: 3.4rem;
+    background: #fff;
 }
 
-.ipa-chart.consonant-table td:hover {
-    background: var(--cell-hover);
+.ipa-chart.consonant-table .voiced-column {
+    background: #e8e8e8;
 }
 
 .ipa-chart.consonant-table .segment {
-    font-size: 1.1rem;
+    font-size: 1.35rem;
     display: block;
-}
-
-.ipa-chart.consonant-table .voicing {
-    font-size: 0.65rem;
-    color: var(--text-secondary);
-    display: block;
-    margin-top: 0.15rem;
+    line-height: 1.45;
+    white-space: pre-line;
 }
 
 /* Vowel Chart */
-.vowel-grid {
-    display: grid;
-    grid-template-columns: auto repeat(5, 1fr);
-    gap: 2px;
-    background: var(--border-color);
-    border: 1px solid var(--border-color);
+.ipa-chart.vowel-table {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
-.vowel-cell {
-    background: var(--cell-bg);
-    padding: 0.5rem;
+.ipa-chart.vowel-table th,
+.ipa-chart.vowel-table td {
+    border: 1px solid #333;
+    padding: 0.75rem 0.9rem;
     text-align: center;
-    min-height: 3rem;
+    vertical-align: middle;
+    min-height: 3.25rem;
 }
 
-.vowel-cell.header {
+.ipa-chart.vowel-table th {
     background: var(--header-bg);
     font-weight: 600;
-    font-size: 0.85rem;
 }
 
-.vowel-cell.height-header {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    font-weight: 600;
+.ipa-chart.vowel-table .height-header {
+    text-align: left;
+    width: 8rem;
 }
 
-.vowel-cell .segments {
+.ipa-chart.vowel-table .segments {
     font-size: 1.2rem;
 }
 
-.vowel-cell .empty {
-    color: #ccc;
-    font-size: 0.8rem;
+.complex-vowels {
+    margin: 1.25rem auto 0;
+    width: min(760px, 100%);
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 footer {
@@ -207,13 +245,14 @@ footer a {
 @media (max-width: 768px) {
     .ipa-chart.consonant-table {
         font-size: 0.75rem;
+        table-layout: auto;
     }
     
     .ipa-chart.consonant-table .segment {
         font-size: 0.95rem;
     }
     
-    .vowel-grid {
+    .ipa-chart.vowel-table {
         font-size: 0.85rem;
     }
 }

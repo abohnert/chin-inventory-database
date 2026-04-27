@@ -2,13 +2,13 @@
 
 // Place and Manner orderings for consistent chart layout
 const PLACE_ORDER = [
-    'bilabial', 'labiodental', 'dental', 'alveolar', 'postalveolar',
+    'labial', 'bilabial', 'labiodental', 'dental', 'interdental', 'alveolar', 'postalveolar',
     'alveolo-palatal', 'palatal', 'retroflex', 'velar', 'uvular', 'pharyngeal', 'glottal'
 ];
 
 const MANNER_ORDER = [
-    'plosive', 'nasal', 'trill', 'tap/flap', 'fricative', 'lateral fricative',
-    'approximant', 'lateral approximant', 'affricate', 'lateral affricate', 'implosive'
+    'plosive', 'implosive', 'nasal', 'trill', 'tap/flap', 'fricative', 'lateral fricative',
+    'approximant', 'lateral approximant', 'affricate', 'lateral affricate'
 ];
 
 const HEIGHT_ORDER = [
@@ -19,8 +19,29 @@ const BACKNESS_ORDER = [
     'front', 'near-front', 'central', 'near-back', 'back'
 ];
 
+const VOICING_ORDER = ['voiceless', 'voiced'];
+const ASPIRATION_ORDER = ['unaspirated', 'aspirated', 'unknown'];
+const ROUNDING_ORDER = ['unrounded', 'rounded', 'unknown'];
+const VOWEL_LENGTH_ORDER = ['short', 'long', 'unknown'];
+
+const DISPLAY_LABELS = {
+    'tap/flap': 'tap/flap',
+    'lateral fricative': 'lateral fricative',
+    'lateral approximant': 'lateral approximant',
+    'lateral affricate': 'lateral affricate',
+    'alveolo-palatal': 'alveolo-palatal',
+    'near-front': 'near-front',
+    'near-back': 'near-back',
+    'near-high': 'near-high',
+    'high-mid': 'high-mid',
+    'low-mid': 'low-mid',
+    'near-low': 'near-low'
+};
+
 // Inventory data will be loaded
 let inventoryData = null;
+let currentLanguage = null;
+let currentDialect = null;
 
 // Load the inventory data
 async function loadInventory() {
@@ -46,34 +67,219 @@ function populateLanguageSelect() {
     });
 }
 
+function getDialects(language) {
+    const languageData = inventoryData[language] || {};
+    return languageData.all_dialects || Object.keys(languageData.dialects || {}).sort();
+}
+
+function formatDialectName(dialect) {
+    return dialect === 'unspecified' ? 'Unspecified' : dialect;
+}
+
+function formatFeatureLabel(value) {
+    if (!value) return '';
+    const label = DISPLAY_LABELS[value] || value;
+    return label.charAt(0).toUpperCase() + label.slice(1);
+}
+
+function orderedKeys(keys, preferredOrder) {
+    const keySet = new Set(keys);
+    const ordered = preferredOrder.filter(key => keySet.has(key));
+    const extras = [...keySet].filter(key => !preferredOrder.includes(key)).sort();
+    return ordered.concat(extras);
+}
+
+function hasSegments(value) {
+    if (Array.isArray(value)) return value.length > 0;
+    if (!value || typeof value !== 'object') return false;
+    return Object.values(value).some(hasSegments);
+}
+
+// Populate dialect dropdown
+function populateDialectSelect(language) {
+    const select = document.getElementById('dialect-select');
+    const dialectSection = document.getElementById('dialect-selector-section');
+    const dialects = getDialects(language);
+    
+    // Clear existing options
+    select.innerHTML = '';
+    
+    if (dialects.length > 1) {
+        const allOption = document.createElement('option');
+        allOption.value = '';
+        allOption.textContent = '-- All dialects --';
+        select.appendChild(allOption);
+
+        dialects.forEach(dialect => {
+            const option = document.createElement('option');
+            option.value = dialect;
+            option.textContent = formatDialectName(dialect);
+            select.appendChild(option);
+        });
+        dialectSection.classList.remove('hidden');
+    } else {
+        dialectSection.classList.add('hidden');
+    }
+}
+
+function emptyVowels() {
+    return { monophthongs: {}, diphthongs: {}, triphthongs: [] };
+}
+
+function normalizeVowels(vowels) {
+    if (!vowels) return emptyVowels();
+
+    if (vowels.monophthongs || vowels.diphthongs || vowels.triphthongs) {
+        return {
+            monophthongs: vowels.monophthongs || {},
+            diphthongs: vowels.diphthongs || {},
+            triphthongs: vowels.triphthongs || []
+        };
+    }
+
+    return { monophthongs: vowels, diphthongs: {}, triphthongs: [] };
+}
+
+function addUnique(target, segment) {
+    if (!target.includes(segment)) {
+        target.push(segment);
+    }
+}
+
+function mergeConsonants(target, source) {
+    for (const place in source) {
+        if (!target[place]) target[place] = {};
+        for (const manner in source[place]) {
+            if (!target[place][manner]) target[place][manner] = {};
+            for (const voicing in source[place][manner]) {
+                if (!target[place][manner][voicing]) {
+                    target[place][manner][voicing] = [];
+                }
+                source[place][manner][voicing].forEach(segment => {
+                    addUnique(target[place][manner][voicing], segment);
+                });
+            }
+        }
+    }
+}
+
+function mergeVowelGrid(target, source) {
+    for (const height in source) {
+        if (!target[height]) target[height] = {};
+        for (const backness in source[height]) {
+            if (!target[height][backness]) target[height][backness] = {};
+            for (const rounding in source[height][backness]) {
+                if (!target[height][backness][rounding]) {
+                    target[height][backness][rounding] = [];
+                }
+                source[height][backness][rounding].forEach(segment => {
+                    addUnique(target[height][backness][rounding], segment);
+                });
+            }
+        }
+    }
+}
+
+function mergeVowelLists(target, source) {
+    for (const length in source) {
+        if (!target[length]) target[length] = [];
+        source[length].forEach(segment => addUnique(target[length], segment));
+    }
+}
+
+function sortSegmentsInPlace(value) {
+    if (Array.isArray(value)) {
+        value.sort();
+        return;
+    }
+    if (!value || typeof value !== 'object') return;
+    Object.values(value).forEach(sortSegmentsInPlace);
+}
+
+// Merge segments from multiple dialects
+function mergeDialects(data, dialects, selectedDialect) {
+    if (selectedDialect) {
+        const dialectData = data.dialects[selectedDialect] || { consonants: {}, vowels: emptyVowels() };
+        return {
+            consonants: dialectData.consonants || {},
+            vowels: normalizeVowels(dialectData.vowels)
+        };
+    }
+
+    const merged = { consonants: {}, vowels: emptyVowels() };
+
+    for (const dialect of dialects) {
+        const dialectData = data.dialects[dialect];
+        if (!dialectData) continue;
+
+        mergeConsonants(merged.consonants, dialectData.consonants || {});
+
+        const vowelData = normalizeVowels(dialectData.vowels);
+        mergeVowelGrid(merged.vowels.monophthongs, vowelData.monophthongs);
+        mergeVowelLists(merged.vowels.diphthongs, vowelData.diphthongs);
+        vowelData.triphthongs.forEach(segment => addUnique(merged.vowels.triphthongs, segment));
+    }
+
+    sortSegmentsInPlace(merged);
+    return merged;
+}
+
+function getDialectInfoText(data, selectedDialect) {
+    const dialects = data.all_dialects || Object.keys(data.dialects || {}).sort();
+
+    if (selectedDialect) {
+        return `Dialect: ${formatDialectName(selectedDialect)}`;
+    }
+    if (dialects.length > 1) {
+        return `Showing all dialects: ${dialects.map(formatDialectName).join(', ')}`;
+    }
+    if (dialects.length === 1 && dialects[0] !== 'unspecified') {
+        return `Dialect: ${formatDialectName(dialects[0])}`;
+    }
+    return '';
+}
+
 // Event listener for language selection
 document.addEventListener('DOMContentLoaded', () => {
     loadInventory();
     
     document.getElementById('language-select').addEventListener('change', (e) => {
         const selectedLang = e.target.value;
+        currentLanguage = selectedLang;
+        currentDialect = '';
+        
         if (selectedLang) {
-            renderCharts(selectedLang);
+            populateDialectSelect(selectedLang);
+            renderCharts(selectedLang, '');
+        } else {
+            document.getElementById('dialect-selector-section').classList.add('hidden');
+            document.getElementById('charts-container').classList.add('hidden');
+            document.getElementById('welcome-message').classList.remove('hidden');
+        }
+    });
+    
+    document.getElementById('dialect-select').addEventListener('change', (e) => {
+        if (currentLanguage) {
+            currentDialect = e.target.value;
+            renderCharts(currentLanguage, currentDialect);
         }
     });
 });
 
 // Render charts for selected language
-function renderCharts(language) {
+function renderCharts(language, dialect) {
     const data = inventoryData[language];
+    const dialectData = mergeDialects(data, getDialects(language), dialect);
     
     // Update language info
     document.getElementById('language-name').textContent = language;
-    const dialects = data.dialects && data.dialects.length > 0 
-        ? `Dialects: ${data.dialects.join(', ')}` 
-        : '';
-    document.getElementById('dialect-info').textContent = dialects;
+    document.getElementById('dialect-info').textContent = getDialectInfoText(data, dialect);
     
     // Render consonant chart
-    renderConsonantChart(data.consonants);
+    renderConsonantChart(dialectData.consonants);
     
     // Render vowel chart
-    renderVowelChart(data.vowels);
+    renderVowelChart(dialectData.vowels);
     
     // Show charts, hide welcome
     document.getElementById('charts-container').classList.remove('hidden');
@@ -84,79 +290,119 @@ function renderCharts(language) {
 function renderConsonantChart(consonants) {
     const container = document.getElementById('consonant-chart');
     container.innerHTML = '';
-    
-    // Build table
+
+    const placeKeys = orderedKeys(Object.keys(consonants || {}), PLACE_ORDER)
+        .filter(place => hasSegments(consonants[place]));
+
+    const placeGroups = placeKeys.map(place => {
+        const placeData = consonants[place] || {};
+        const voicingKeys = new Set();
+
+        for (const manner in placeData) {
+            for (const key in placeData[manner]) {
+                if (hasSegments(placeData[manner][key])) {
+                    voicingKeys.add(key.split('_')[0]);
+                }
+            }
+        }
+
+        return {
+            place,
+            voicings: orderedKeys([...voicingKeys], VOICING_ORDER)
+        };
+    }).filter(group => group.voicings.length > 0);
+
+    const mannerKeys = new Set();
+    placeGroups.forEach(group => {
+        const placeData = consonants[group.place] || {};
+        Object.keys(placeData).forEach(manner => {
+            if (hasSegments(placeData[manner])) mannerKeys.add(manner);
+        });
+    });
+
+    const visibleManners = orderedKeys([...mannerKeys], MANNER_ORDER);
+
+    if (placeGroups.length === 0 || visibleManners.length === 0) {
+        container.textContent = '';
+        return;
+    }
+
     const table = document.createElement('table');
     table.className = 'ipa-chart consonant-table';
-    
-    // Header row with manners
+
     const thead = document.createElement('thead');
-    const headerRow = document.createElement('tr');
-    headerRow.innerHTML = '<th>Place \\ Manner</th>';
-    
-    MANNER_ORDER.forEach(manner => {
+    const placeHeaderRow = document.createElement('tr');
+    const corner = document.createElement('th');
+    corner.className = 'manner-axis-header';
+    corner.rowSpan = 2;
+    corner.textContent = 'Manner';
+    placeHeaderRow.appendChild(corner);
+
+    placeGroups.forEach(group => {
         const th = document.createElement('th');
-        th.textContent = manner;
-        th.className = 'manner-header';
-        headerRow.appendChild(th);
+        th.textContent = formatFeatureLabel(group.place);
+        th.className = 'place-header';
+        th.colSpan = group.voicings.length;
+        placeHeaderRow.appendChild(th);
     });
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-    
-    // Body rows with places
-    const tbody = document.createElement('tbody');
-    
-    PLACE_ORDER.forEach(place => {
-        const row = document.createElement('tr');
-        
-        // Place header
-        const placeHeader = document.createElement('th');
-        placeHeader.textContent = place;
-        placeHeader.className = 'place-header';
-        row.appendChild(placeHeader);
-        
-        // Cells for each manner
-        MANNER_ORDER.forEach(manner => {
-            const cell = document.createElement('td');
-            
-            const placeData = consonants[place] || {};
-            const mannerData = placeData[manner] || {};
-            
-            // Combine voiceless and voiced segments
-            let segments = [];
-            
-            // Voiceless unaspirated
-            if (mannerData.voiceless_unaspirated) {
-                segments = segments.concat(mannerData.voiceless_unaspirated);
-            }
-            // Voiceless aspirated
-            if (mannerData.voiceless_aspirated) {
-                segments = segments.concat(mannerData.voiceless_aspirated.map(s => s + 'ʰ'));
-            }
-            // Voiced unaspirated
-            if (mannerData.voiced_unaspirated) {
-                segments = segments.concat(mannerData.voiced_unaspirated);
-            }
-            // Voiced aspirated (rare)
-            if (mannerData.voiced_aspirated) {
-                segments = segments.concat(mannerData.voiced_aspirated);
-            }
-            
-            if (segments.length > 0) {
-                const segSpan = document.createElement('span');
-                segSpan.className = 'segment';
-                segSpan.textContent = segments.join(' ');
-                cell.appendChild(segSpan);
-            } else {
-                cell.innerHTML = '<span class="empty">—</span>';
-            }
-            
-            row.appendChild(cell);
+
+    const voicingHeaderRow = document.createElement('tr');
+    placeGroups.forEach(group => {
+        group.voicings.forEach(voicing => {
+            const th = document.createElement('th');
+            th.textContent = formatFeatureLabel(voicing);
+            th.className = `voicing-header ${voicing}-column`;
+            voicingHeaderRow.appendChild(th);
         });
-        
+    });
+
+    thead.appendChild(placeHeaderRow);
+    thead.appendChild(voicingHeaderRow);
+    table.appendChild(thead);
+
+    const tbody = document.createElement('tbody');
+
+    visibleManners.forEach(manner => {
+        const row = document.createElement('tr');
+        const mannerHeader = document.createElement('th');
+        mannerHeader.textContent = formatFeatureLabel(manner);
+        mannerHeader.className = 'manner-header';
+        row.appendChild(mannerHeader);
+
+        placeGroups.forEach(group => {
+            const placeData = consonants[group.place] || {};
+            const mannerData = placeData[manner] || {};
+
+            group.voicings.forEach(voicing => {
+                const cell = document.createElement('td');
+                cell.className = `${voicing}-column`;
+
+                const segmentsByAspiration = ASPIRATION_ORDER.map(aspiration => {
+                    const segments = mannerData[`${voicing}_${aspiration}`] || [];
+                    return segments.length > 0 ? segments.join(' ') : '';
+                }).filter(Boolean);
+
+                Object.keys(mannerData).sort().forEach(key => {
+                    const [keyVoicing, keyAspiration] = key.split('_');
+                    if (keyVoicing === voicing && !ASPIRATION_ORDER.includes(keyAspiration)) {
+                        segmentsByAspiration.push(mannerData[key].join(' '));
+                    }
+                });
+
+                if (segmentsByAspiration.length > 0) {
+                    const segSpan = document.createElement('span');
+                    segSpan.className = 'segment';
+                    segSpan.textContent = segmentsByAspiration.join('\n');
+                    cell.appendChild(segSpan);
+                }
+
+                row.appendChild(cell);
+            });
+        });
+
         tbody.appendChild(row);
     });
-    
+
     table.appendChild(tbody);
     container.appendChild(table);
 }
@@ -165,62 +411,112 @@ function renderConsonantChart(consonants) {
 function renderVowelChart(vowels) {
     const container = document.getElementById('vowel-chart');
     container.innerHTML = '';
-    
-    const grid = document.createElement('div');
-    grid.className = 'vowel-grid';
-    
-    // Corner cell
-    const corner = document.createElement('div');
-    corner.className = 'vowel-cell header';
-    corner.textContent = 'Height \\ Backness';
-    grid.appendChild(corner);
-    
-    // Backness header row
-    BACKNESS_ORDER.forEach(backness => {
-        const header = document.createElement('div');
-        header.className = 'vowel-cell header';
-        header.textContent = backness;
-        grid.appendChild(header);
-    });
-    
-    // Height rows (reversed for high at top)
-    [...HEIGHT_ORDER].reverse().forEach(height => {
-        // Height header
-        const heightHeader = document.createElement('div');
-        heightHeader.className = 'vowel-cell height-header';
-        heightHeader.textContent = height;
-        grid.appendChild(heightHeader);
-        
-        // Cells for each backness
-        BACKNESS_ORDER.forEach(backness => {
-            const cell = document.createElement('div');
-            cell.className = 'vowel-cell';
-            
-            const heightData = vowels[height] || {};
-            const backnessData = heightData[backness] || {};
-            
-            // Combine rounded and unrounded
-            let segments = [];
-            
-            if (backnessData.rounded) {
-                segments = segments.concat(backnessData.rounded);
+
+    const vowelData = normalizeVowels(vowels);
+    const monophthongs = vowelData.monophthongs;
+    const visibleHeights = orderedKeys(Object.keys(monophthongs), HEIGHT_ORDER)
+        .filter(height => hasSegments(monophthongs[height]));
+
+    const backnessKeys = new Set();
+    visibleHeights.forEach(height => {
+        Object.keys(monophthongs[height] || {}).forEach(backness => {
+            if (hasSegments(monophthongs[height][backness])) {
+                backnessKeys.add(backness);
             }
-            if (backnessData.unrounded) {
-                segments = segments.concat(backnessData.unrounded);
-            }
-            
-            if (segments.length > 0) {
-                const segDiv = document.createElement('div');
-                segDiv.className = 'segments';
-                segDiv.textContent = segments.join(' ');
-                cell.appendChild(segDiv);
-            } else {
-                cell.innerHTML = '<span class="empty">—</span>';
-            }
-            
-            grid.appendChild(cell);
         });
     });
-    
-    container.appendChild(grid);
+    const visibleBacknesses = orderedKeys([...backnessKeys], BACKNESS_ORDER);
+
+    if (visibleHeights.length > 0 && visibleBacknesses.length > 0) {
+        const table = document.createElement('table');
+        table.className = 'ipa-chart vowel-table';
+
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+        const corner = document.createElement('th');
+        corner.textContent = 'Height \\ Backness';
+        headerRow.appendChild(corner);
+
+        visibleBacknesses.forEach(backness => {
+            const th = document.createElement('th');
+            th.textContent = formatFeatureLabel(backness);
+            headerRow.appendChild(th);
+        });
+
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+        visibleHeights.forEach(height => {
+            const row = document.createElement('tr');
+            const heightHeader = document.createElement('th');
+            heightHeader.textContent = formatFeatureLabel(height);
+            heightHeader.className = 'height-header';
+            row.appendChild(heightHeader);
+
+            visibleBacknesses.forEach(backness => {
+                const cell = document.createElement('td');
+                const backnessData = (monophthongs[height] || {})[backness] || {};
+                const segments = [];
+
+                ROUNDING_ORDER.forEach(rounding => {
+                    if (backnessData[rounding]) {
+                        segments.push(...backnessData[rounding]);
+                    }
+                });
+
+                Object.keys(backnessData).sort().forEach(rounding => {
+                    if (!ROUNDING_ORDER.includes(rounding)) {
+                        segments.push(...backnessData[rounding]);
+                    }
+                });
+
+                if (segments.length > 0) {
+                    const segSpan = document.createElement('span');
+                    segSpan.className = 'segments';
+                    segSpan.textContent = [...new Set(segments)].join(', ');
+                    cell.appendChild(segSpan);
+                }
+
+                row.appendChild(cell);
+            });
+
+            tbody.appendChild(row);
+        });
+
+        table.appendChild(tbody);
+        container.appendChild(table);
+    }
+
+    renderComplexVowelList(container, 'Diphthongs', flattenLengthGroupedVowels(vowelData.diphthongs));
+    renderComplexVowelList(container, 'Triphthongs', vowelData.triphthongs);
+}
+
+function flattenLengthGroupedVowels(groupedVowels) {
+    const vowels = [];
+
+    VOWEL_LENGTH_ORDER.forEach(length => {
+        if (groupedVowels[length]) vowels.push(...groupedVowels[length]);
+    });
+
+    Object.keys(groupedVowels).sort().forEach(length => {
+        if (!VOWEL_LENGTH_ORDER.includes(length)) {
+            vowels.push(...groupedVowels[length]);
+        }
+    });
+
+    return [...new Set(vowels)];
+}
+
+function renderComplexVowelList(container, label, vowels) {
+    if (!vowels || vowels.length === 0) return;
+
+    const list = document.createElement('p');
+    list.className = 'complex-vowels';
+
+    const labelSpan = document.createElement('strong');
+    labelSpan.textContent = `${label}: `;
+    list.appendChild(labelSpan);
+    list.appendChild(document.createTextNode(vowels.join(', ')));
+    container.appendChild(list);
 }

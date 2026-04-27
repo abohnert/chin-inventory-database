@@ -10,38 +10,69 @@ from collections import defaultdict
 
 def parse_csv(filepath):
     """Parse the CSV and return structured data."""
-    languages = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(list)))))
+    # Structure: languages[lang][dialect] = {'consonants': {}, 'vowels': {}}
+    languages = defaultdict(dict)
     
     with open(filepath, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
             lang = row['Language']
-            dialect = row['Dialect']
+            dialect = row['Dialect'] or 'unspecified'
             segment = row['Segment']
             seg_type = row['Type']
             
-            # Build language/dialect info
-            if dialect and dialect not in languages[lang].get('dialects', []):
-                if 'dialects' not in languages[lang]:
-                    languages[lang]['dialects'] = []
-                languages[lang]['dialects'].append(dialect)
+            # Initialize dialect if needed
+            if dialect not in languages[lang]:
+                languages[lang][dialect] = {
+                    'consonants': {},
+                    'vowels': {
+                        'monophthongs': {},
+                        'diphthongs': defaultdict(list),
+                        'triphthongs': []
+                    }
+                }
             
             if seg_type == 'consonant':
                 place = row['Place_of_Articulation'] or 'unknown'
                 manner = row['Manner'] or 'unknown'
                 voicing = row['Voicing'] or 'unknown'
                 aspiration = row['Aspiration'] or 'unaspirated'
-                
-                # Use voicing+aspiration as key
                 key = f"{voicing}_{aspiration}"
-                languages[lang]['consonants'][place][manner][key].append(segment)
+                
+                cons = languages[lang][dialect]['consonants']
+                if place not in cons:
+                    cons[place] = {}
+                if manner not in cons[place]:
+                    cons[place][manner] = {}
+                if key not in cons[place][manner]:
+                    cons[place][manner][key] = []
+                cons[place][manner][key].append(segment)
                 
             elif seg_type == 'vowel':
+                vowel_type = row['Vowel_Type'] or 'monophthong'
+                vows = languages[lang][dialect]['vowels']
+
+                if vowel_type == 'diphthong':
+                    length = row['Length'] or 'unknown'
+                    vows['diphthongs'][length].append(segment)
+                    continue
+
+                if vowel_type == 'triphthong':
+                    vows['triphthongs'].append(segment)
+                    continue
+
                 height = row['Height'] or 'unknown'
                 backness = row['Backness'] or 'unknown'
                 rounding = row['Rounding'] or 'unknown'
-                
-                languages[lang]['vowels'][height][backness][rounding].append(segment)
+                monophthongs = vows['monophthongs']
+
+                if height not in monophthongs:
+                    monophthongs[height] = {}
+                if backness not in monophthongs[height]:
+                    monophthongs[height][backness] = {}
+                if rounding not in monophthongs[height][backness]:
+                    monophthongs[height][backness][rounding] = []
+                monophthongs[height][backness][rounding].append(segment)
     
     return languages
 
@@ -52,28 +83,49 @@ def convert_to_json(data):
     
     for lang, lang_data in sorted(data.items()):
         result[lang] = {
-            'dialects': lang_data.get('dialects', []),
-            'consonants': {},
-            'vowels': {}
+            'dialects': {},
+            'all_dialects': sorted(lang_data.keys())
         }
         
-        # Process consonants
-        for place, manners in lang_data['consonants'].items():
-            result[lang]['consonants'][place] = {}
-            for manner, voicing_data in manners.items():
-                result[lang]['consonants'][place][manner] = {}
-                for voicing_key, segments in voicing_data.items():
-                    if segments:
-                        result[lang]['consonants'][place][manner][voicing_key] = sorted(set(segments), key=lambda x: str(x))
-        
-        # Process vowels
-        for height, backnesses in lang_data['vowels'].items():
-            result[lang]['vowels'][height] = {}
-            for backness, roundings in backnesses.items():
-                result[lang]['vowels'][height][backness] = {}
-                for rounding, segments in roundings.items():
-                    if segments:
-                        result[lang]['vowels'][height][backness][rounding] = sorted(set(segments), key=lambda x: str(x))
+        # Process each dialect
+        for dialect_key, dialect_data in lang_data.items():
+            result[lang]['dialects'][dialect_key] = {
+                'consonants': {},
+                'vowels': {
+                    'monophthongs': {},
+                    'diphthongs': {},
+                    'triphthongs': []
+                }
+            }
+            
+            # Process consonants for this dialect
+            for place, manners in dialect_data.get('consonants', {}).items():
+                result[lang]['dialects'][dialect_key]['consonants'][place] = {}
+                for manner, voicing_data in manners.items():
+                    result[lang]['dialects'][dialect_key]['consonants'][place][manner] = {}
+                    for voicing_key, segments in voicing_data.items():
+                        if segments:
+                            result[lang]['dialects'][dialect_key]['consonants'][place][manner][voicing_key] = sorted(set(segments), key=lambda x: str(x))
+            
+            # Process vowels for this dialect
+            vowels = dialect_data.get('vowels', {})
+            monophthongs = vowels.get('monophthongs', {})
+
+            for height, backnesses in monophthongs.items():
+                result[lang]['dialects'][dialect_key]['vowels']['monophthongs'][height] = {}
+                for backness, roundings in backnesses.items():
+                    result[lang]['dialects'][dialect_key]['vowels']['monophthongs'][height][backness] = {}
+                    for rounding, segments in roundings.items():
+                        if segments:
+                            result[lang]['dialects'][dialect_key]['vowels']['monophthongs'][height][backness][rounding] = sorted(set(segments), key=lambda x: str(x))
+
+            for length, segments in vowels.get('diphthongs', {}).items():
+                if segments:
+                    result[lang]['dialects'][dialect_key]['vowels']['diphthongs'][length] = sorted(set(segments), key=lambda x: str(x))
+
+            triphthongs = vowels.get('triphthongs', [])
+            if triphthongs:
+                result[lang]['dialects'][dialect_key]['vowels']['triphthongs'] = sorted(set(triphthongs), key=lambda x: str(x))
     
     return result
 
