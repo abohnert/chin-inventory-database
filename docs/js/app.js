@@ -1,5 +1,5 @@
 // IPA Chart Rendering Application
-const ASSET_VERSION = '20260427-w-bilabial';
+const ASSET_VERSION = '20260427-no-axis-labels';
 
 // Place and Manner orderings for consistent chart layout
 const PLACE_ORDER = [
@@ -97,6 +97,14 @@ function hasSegments(value) {
     if (Array.isArray(value)) return value.length > 0;
     if (!value || typeof value !== 'object') return false;
     return Object.values(value).some(hasSegments);
+}
+
+function isLongVowel(segment) {
+    return segment.includes('ː') || segment.includes(':');
+}
+
+function isNasalVowel(segment) {
+    return segment.includes('̃');
 }
 
 // Populate dialect dropdown
@@ -337,12 +345,23 @@ function renderConsonantChart(consonants) {
     const table = document.createElement('table');
     table.className = 'ipa-chart consonant-table';
 
+    const colgroup = document.createElement('colgroup');
+    const mannerCol = document.createElement('col');
+    mannerCol.className = 'row-label-column';
+    colgroup.appendChild(mannerCol);
+
+    placeGroups.forEach(group => {
+        group.voicings.forEach(() => {
+            colgroup.appendChild(document.createElement('col'));
+        });
+    });
+    table.appendChild(colgroup);
+
     const thead = document.createElement('thead');
     const placeHeaderRow = document.createElement('tr');
     const corner = document.createElement('th');
-    corner.className = 'manner-axis-header';
+    corner.className = 'chart-corner';
     corner.rowSpan = 2;
-    corner.textContent = 'Manner';
     placeHeaderRow.appendChild(corner);
 
     placeGroups.forEach(group => {
@@ -438,10 +457,20 @@ function renderVowelChart(vowels) {
         const table = document.createElement('table');
         table.className = 'ipa-chart vowel-table';
 
+        const colgroup = document.createElement('colgroup');
+        const heightCol = document.createElement('col');
+        heightCol.className = 'row-label-column';
+        colgroup.appendChild(heightCol);
+
+        visibleBacknesses.forEach(() => {
+            colgroup.appendChild(document.createElement('col'));
+        });
+        table.appendChild(colgroup);
+
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
         const corner = document.createElement('th');
-        corner.textContent = 'Height \\ Backness';
+        corner.className = 'chart-corner';
         headerRow.appendChild(corner);
 
         visibleBacknesses.forEach(backness => {
@@ -481,7 +510,7 @@ function renderVowelChart(vowels) {
                 if (segments.length > 0) {
                     const segSpan = document.createElement('span');
                     segSpan.className = 'segments';
-                    segSpan.textContent = [...new Set(segments)].join(', ');
+                    segSpan.textContent = formatMonophthongCell(segments);
                     cell.appendChild(segSpan);
                 }
 
@@ -497,6 +526,28 @@ function renderVowelChart(vowels) {
 
     renderComplexVowelList(container, 'Diphthongs', flattenLengthGroupedVowels(vowelData.diphthongs));
     renderComplexVowelList(container, 'Triphthongs', vowelData.triphthongs);
+}
+
+function formatMonophthongCell(segments) {
+    const uniqueSegments = [...new Set(segments)];
+    const regular = [];
+    const long = [];
+    const nasal = [];
+
+    uniqueSegments.forEach(segment => {
+        if (isNasalVowel(segment)) {
+            nasal.push(segment);
+        } else if (isLongVowel(segment)) {
+            long.push(segment);
+        } else {
+            regular.push(segment);
+        }
+    });
+
+    return [regular, long, nasal]
+        .filter(group => group.length > 0)
+        .map(group => group.join('  '))
+        .join('\n');
 }
 
 function flattenLengthGroupedVowels(groupedVowels) {

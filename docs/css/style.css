@@ -152,8 +152,12 @@ header h1 {
     font-weight: 600;
 }
 
-.ipa-chart.consonant-table .manner-axis-header {
-    width: 8rem;
+.ipa-chart .row-label-column {
+    width: 8.5rem;
+}
+
+.ipa-chart .chart-corner {
+    background: var(--bg-secondary);
 }
 
 .ipa-chart.consonant-table .place-header {
@@ -165,7 +169,7 @@ header h1 {
     background: var(--header-bg);
     text-align: left;
     font-size: 0.95rem;
-    width: 8rem;
+    width: 8.5rem;
 }
 
 .ipa-chart.consonant-table .voicing-header {
@@ -214,11 +218,13 @@ header h1 {
 
 .ipa-chart.vowel-table .height-header {
     text-align: left;
-    width: 8rem;
+    width: 8.5rem;
 }
 
 .ipa-chart.vowel-table .segments {
     font-size: 1.2rem;
+    line-height: 1.45;
+    white-space: pre-line;
 }
 
 .complex-vowels {
