@@ -1,4 +1,5 @@
 // IPA Chart Rendering Application
+const ASSET_VERSION = '20260427-ipa-charts';
 
 // Place and Manner orderings for consistent chart layout
 const PLACE_ORDER = [
@@ -46,7 +47,10 @@ let currentDialect = null;
 // Load the inventory data
 async function loadInventory() {
     try {
-        const response = await fetch('data/inventory.json');
+        const response = await fetch(`data/inventory.json?v=${ASSET_VERSION}`, { cache: 'no-store' });
+        if (!response.ok) {
+            throw new Error(`Inventory request failed with status ${response.status}`);
+        }
         inventoryData = await response.json();
         populateLanguageSelect();
     } catch (error) {
