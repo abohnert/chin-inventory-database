@@ -22,9 +22,7 @@
               "voiced_unaspirated": [
                 "m"
               ]
-            }
-          },
-          "labial": {
+            },
             "approximant": {
               "voiced_unaspirated": [
                 "w"
@@ -243,9 +241,7 @@
               "voiced_unaspirated": [
                 "m"
               ]
-            }
-          },
-          "labial": {
+            },
             "approximant": {
               "voiced_unaspirated": [
                 "w"
@@ -461,9 +457,7 @@
               "voiced_unaspirated": [
                 "m"
               ]
-            }
-          },
-          "labial": {
+            },
             "approximant": {
               "voiced_unaspirated": [
                 "w"
@@ -659,19 +653,17 @@
               "voiced_unaspirated": [
                 "m"
               ]
+            },
+            "approximant": {
+              "voiced_unaspirated": [
+                "w"
+              ]
             }
           },
           "labiodental": {
             "fricative": {
               "voiceless_unaspirated": [
                 "f"
-              ]
-            }
-          },
-          "labial": {
-            "approximant": {
-              "voiced_unaspirated": [
-                "w"
               ]
             }
           },
@@ -1234,9 +1226,7 @@
               "voiced_unaspirated": [
                 "m"
               ]
-            }
-          },
-          "labial": {
+            },
             "approximant": {
               "voiced_unaspirated": [
                 "w"
@@ -1612,9 +1602,7 @@
               "voiced_unaspirated": [
                 "m"
               ]
-            }
-          },
-          "labial": {
+            },
             "approximant": {
               "voiced_unaspirated": [
                 "w"
@@ -1960,9 +1948,7 @@
               "voiced_aspirated": [
                 "mʰ"
               ]
-            }
-          },
-          "labial": {
+            },
             "approximant": {
               "voiced_unaspirated": [
                 "w"
@@ -3530,6 +3516,11 @@
               "voiced_unaspirated": [
                 "m"
               ]
+            },
+            "approximant": {
+              "voiced_unaspirated": [
+                "w"
+              ]
             }
           },
           "dental": {
@@ -3552,13 +3543,6 @@
               ],
               "voiced_unaspirated": [
                 "v"
-              ]
-            }
-          },
-          "labial": {
-            "approximant": {
-              "voiced_unaspirated": [
-                "w"
               ]
             }
           },
@@ -4553,6 +4537,11 @@
               "voiced_unaspirated": [
                 "m"
               ]
+            },
+            "approximant": {
+              "voiced_unaspirated": [
+                "w"
+              ]
             }
           },
           "labiodental": {
@@ -4562,13 +4551,6 @@
               ],
               "voiced_unaspirated": [
                 "v"
-              ]
-            }
-          },
-          "labial": {
-            "approximant": {
-              "voiced_unaspirated": [
-                "w"
               ]
             }
           },
@@ -4728,19 +4710,17 @@
               "voiced_unaspirated": [
                 "m"
               ]
+            },
+            "approximant": {
+              "voiced_unaspirated": [
+                "w"
+              ]
             }
           },
           "labiodental": {
             "fricative": {
               "voiced_unaspirated": [
                 "v"
-              ]
-            }
-          },
-          "labial": {
-            "approximant": {
-              "voiced_unaspirated": [
-                "w"
               ]
             }
           },
@@ -5435,6 +5415,11 @@
               "voiced_unaspirated": [
                 "m"
               ]
+            },
+            "approximant": {
+              "voiced_unaspirated": [
+                "w"
+              ]
             }
           },
           "labiodental": {
@@ -5451,13 +5436,6 @@
             "fricative": {
               "voiceless_unaspirated": [
                 "θ"
-              ]
-            }
-          },
-          "labial": {
-            "approximant": {
-              "voiced_unaspirated": [
-                "w"
               ]
             }
           },

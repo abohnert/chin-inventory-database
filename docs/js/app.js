@@ -1,5 +1,5 @@
 // IPA Chart Rendering Application
-const ASSET_VERSION = '20260427-ipa-charts';
+const ASSET_VERSION = '20260427-w-bilabial';
 
 // Place and Manner orderings for consistent chart layout
 const PLACE_ORDER = [
@@ -109,10 +109,12 @@ function populateDialectSelect(language) {
     select.innerHTML = '';
     
     if (dialects.length > 1) {
-        const allOption = document.createElement('option');
-        allOption.value = '';
-        allOption.textContent = '-- All dialects --';
-        select.appendChild(allOption);
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = '-- Choose a dialect --';
+        placeholder.disabled = true;
+        placeholder.selected = true;
+        select.appendChild(placeholder);
 
         dialects.forEach(dialect => {
             const option = document.createElement('option');
@@ -124,6 +126,11 @@ function populateDialectSelect(language) {
     } else {
         dialectSection.classList.add('hidden');
     }
+}
+
+function hideInventories(showWelcome = false) {
+    document.getElementById('charts-container').classList.add('hidden');
+    document.getElementById('welcome-message').classList.toggle('hidden', !showWelcome);
 }
 
 function emptyVowels() {
@@ -254,18 +261,25 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (selectedLang) {
             populateDialectSelect(selectedLang);
-            renderCharts(selectedLang, '');
+            if (getDialects(selectedLang).length > 1) {
+                hideInventories();
+            } else {
+                renderCharts(selectedLang, '');
+            }
         } else {
             document.getElementById('dialect-selector-section').classList.add('hidden');
-            document.getElementById('charts-container').classList.add('hidden');
-            document.getElementById('welcome-message').classList.remove('hidden');
+            hideInventories(true);
         }
     });
     
     document.getElementById('dialect-select').addEventListener('change', (e) => {
         if (currentLanguage) {
             currentDialect = e.target.value;
-            renderCharts(currentLanguage, currentDialect);
+            if (currentDialect) {
+                renderCharts(currentLanguage, currentDialect);
+            } else {
+                hideInventories();
+            }
         }
     });
 });
@@ -299,22 +313,11 @@ function renderConsonantChart(consonants) {
         .filter(place => hasSegments(consonants[place]));
 
     const placeGroups = placeKeys.map(place => {
-        const placeData = consonants[place] || {};
-        const voicingKeys = new Set();
-
-        for (const manner in placeData) {
-            for (const key in placeData[manner]) {
-                if (hasSegments(placeData[manner][key])) {
-                    voicingKeys.add(key.split('_')[0]);
-                }
-            }
-        }
-
         return {
             place,
-            voicings: orderedKeys([...voicingKeys], VOICING_ORDER)
+            voicings: VOICING_ORDER
         };
-    }).filter(group => group.voicings.length > 0);
+    });
 
     const mannerKeys = new Set();
     placeGroups.forEach(group => {
