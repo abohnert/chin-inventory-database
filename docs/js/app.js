@@ -1,5 +1,5 @@
 // IPA Chart Rendering Application
-const ASSET_VERSION = '20260427-no-axis-labels';
+const ASSET_VERSION = '20260427-manner-order-nasal';
 
 // Place and Manner orderings for consistent chart layout
 const PLACE_ORDER = [
@@ -8,8 +8,9 @@ const PLACE_ORDER = [
 ];
 
 const MANNER_ORDER = [
-    'plosive', 'implosive', 'nasal', 'trill', 'tap/flap', 'fricative', 'lateral fricative',
-    'approximant', 'lateral approximant', 'affricate', 'lateral affricate'
+    'plosive', 'implosive', 'fricative', 'lateral fricative', 'affricate',
+    'lateral affricate', 'nasal', 'tap/flap', 'trill', 'approximant',
+    'lateral approximant'
 ];
 
 const HEIGHT_ORDER = [
@@ -24,6 +25,7 @@ const VOICING_ORDER = ['voiceless', 'voiced'];
 const ASPIRATION_ORDER = ['unaspirated', 'aspirated', 'unknown'];
 const ROUNDING_ORDER = ['unrounded', 'rounded', 'unknown'];
 const VOWEL_LENGTH_ORDER = ['short', 'long', 'unknown'];
+const BRANCH_ORDER = ['Northern', 'Northwestern', 'Central', 'Southern', 'Maraic', 'Other'];
 
 const DISPLAY_LABELS = {
     'tap/flap': 'tap/flap',
@@ -41,17 +43,27 @@ const DISPLAY_LABELS = {
 
 // Inventory data will be loaded
 let inventoryData = null;
+let sourcesData = {};
 let currentLanguage = null;
 let currentDialect = null;
 
 // Load the inventory data
 async function loadInventory() {
     try {
-        const response = await fetch(`data/inventory.json?v=${ASSET_VERSION}`, { cache: 'no-store' });
-        if (!response.ok) {
-            throw new Error(`Inventory request failed with status ${response.status}`);
+        const [inventoryResponse, sourcesResponse] = await Promise.all([
+            fetch(`data/inventory.json?v=${ASSET_VERSION}`, { cache: 'no-store' }),
+            fetch(`data/sources.json?v=${ASSET_VERSION}`, { cache: 'no-store' })
+        ]);
+
+        if (!inventoryResponse.ok) {
+            throw new Error(`Inventory request failed with status ${inventoryResponse.status}`);
         }
-        inventoryData = await response.json();
+        if (!sourcesResponse.ok) {
+            console.warn(`Sources request failed with status ${sourcesResponse.status}`);
+        }
+
+        inventoryData = await inventoryResponse.json();
+        sourcesData = sourcesResponse.ok ? await sourcesResponse.json() : {};
         populateLanguageSelect();
     } catch (error) {
         console.error('Error loading inventory data:', error);
@@ -61,14 +73,36 @@ async function loadInventory() {
 // Populate the language dropdown
 function populateLanguageSelect() {
     const select = document.getElementById('language-select');
-    const languages = Object.keys(inventoryData).sort();
-    
-    languages.forEach(lang => {
-        const option = document.createElement('option');
-        option.value = lang;
-        option.textContent = lang;
-        select.appendChild(option);
+    const languagesByBranch = groupLanguagesByBranch();
+    const branches = orderedKeys(Object.keys(languagesByBranch), BRANCH_ORDER);
+
+    branches.forEach(branch => {
+        const group = document.createElement('optgroup');
+        group.label = branch;
+
+        languagesByBranch[branch].sort().forEach(lang => {
+            const option = document.createElement('option');
+            option.value = lang;
+            option.textContent = lang;
+            group.appendChild(option);
+        });
+
+        select.appendChild(group);
     });
+}
+
+function groupLanguagesByBranch() {
+    const languagesByBranch = {};
+
+    Object.keys(inventoryData).forEach(lang => {
+        const branch = inventoryData[lang].branch || 'Other';
+        if (!languagesByBranch[branch]) {
+            languagesByBranch[branch] = [];
+        }
+        languagesByBranch[branch].push(lang);
+    });
+
+    return languagesByBranch;
 }
 
 function getDialects(language) {
@@ -206,6 +240,10 @@ function mergeVowelLists(target, source) {
     }
 }
 
+function mergeSources(target, source) {
+    (source || []).forEach(sourceLabel => addUnique(target, sourceLabel));
+}
+
 function sortSegmentsInPlace(value) {
     if (Array.isArray(value)) {
         value.sort();
@@ -221,11 +259,12 @@ function mergeDialects(data, dialects, selectedDialect) {
         const dialectData = data.dialects[selectedDialect] || { consonants: {}, vowels: emptyVowels() };
         return {
             consonants: dialectData.consonants || {},
-            vowels: normalizeVowels(dialectData.vowels)
+            vowels: normalizeVowels(dialectData.vowels),
+            sources: dialectData.sources || []
         };
     }
 
-    const merged = { consonants: {}, vowels: emptyVowels() };
+    const merged = { consonants: {}, vowels: emptyVowels(), sources: [] };
 
     for (const dialect of dialects) {
         const dialectData = data.dialects[dialect];
@@ -237,6 +276,7 @@ function mergeDialects(data, dialects, selectedDialect) {
         mergeVowelGrid(merged.vowels.monophthongs, vowelData.monophthongs);
         mergeVowelLists(merged.vowels.diphthongs, vowelData.diphthongs);
         vowelData.triphthongs.forEach(segment => addUnique(merged.vowels.triphthongs, segment));
+        mergeSources(merged.sources, dialectData.sources);
     }
 
     sortSegmentsInPlace(merged);
@@ -300,16 +340,192 @@ function renderCharts(language, dialect) {
     // Update language info
     document.getElementById('language-name').textContent = language;
     document.getElementById('dialect-info').textContent = getDialectInfoText(data, dialect);
-    
+
     // Render consonant chart
     renderConsonantChart(dialectData.consonants);
-    
+
     // Render vowel chart
     renderVowelChart(dialectData.vowels);
-    
+
+    // Render sources
+    renderSources(dialectData.sources);
+
     // Show charts, hide welcome
     document.getElementById('charts-container').classList.remove('hidden');
     document.getElementById('welcome-message').classList.add('hidden');
+}
+
+// Render sources list
+function renderSources(sources) {
+    const container = document.getElementById('sources-list');
+    container.innerHTML = '';
+
+    if (!sources || sources.length === 0) {
+        container.innerHTML = '<p class="no-sources">No source information available.</p>';
+        return;
+    }
+
+    sources.forEach(source => {
+        const item = document.createElement('div');
+        item.className = 'source-item';
+        const sourceEntry = sourcesData[source];
+        appendSourceReference(item, source, sourceEntry);
+        container.appendChild(item);
+    });
+}
+
+function appendSourceReference(container, source, entry) {
+    if (!entry || entry._missing) {
+        container.textContent = source;
+        return;
+    }
+
+    appendText(container, formatAuthors(entry.author) || source);
+    appendText(container, ` (${entry.year || 'n.d.'}). `);
+
+    const type = (entry.type || '').toLowerCase();
+
+    if (type === 'article') {
+        appendText(container, `${punctuate(entry.title)} `);
+        appendItalic(container, entry.journal);
+        appendJournalDetails(container, entry);
+    } else if (type === 'incollection') {
+        appendText(container, `${punctuate(entry.title)} `);
+        appendBookChapterDetails(container, entry);
+    } else if (type === 'book') {
+        appendItalic(container, entry.title);
+        appendText(container, '. ');
+        appendText(container, punctuate(entry.publisher));
+    } else if (type.includes('thesis')) {
+        appendItalic(container, entry.title);
+        appendText(container, ` [${formatThesisType(type)}]. `);
+        appendText(container, punctuate(entry.publisher || entry.address));
+    } else if (type.includes('poster')) {
+        appendText(container, `${entry.title || source} [Poster presentation]. `);
+        appendText(container, punctuate(entry.address));
+    } else {
+        appendText(container, `${punctuate(entry.title)} `);
+        appendText(container, punctuate(entry.journal || entry.booktitle || entry.publisher || entry.address));
+    }
+
+    appendSourceUrl(container, entry);
+}
+
+function formatAuthors(authorField) {
+    const authors = (authorField || '').split(/\s+and\s+/).map(formatAuthorName).filter(Boolean);
+    if (authors.length === 0) return '';
+    if (authors.length === 1) return authors[0];
+    if (authors.length === 2) {
+        return `${authors[0]}, & ${authors[1]}`;
+    }
+
+    return `${authors.slice(0, -1).join(', ')}, & ${authors[authors.length - 1]}`;
+}
+
+function formatAuthorName(name) {
+    const trimmed = name.trim();
+    if (!trimmed) return '';
+    if (!trimmed.includes(',')) return trimmed;
+
+    const [surname, given] = trimmed.split(',', 2).map(part => part.trim());
+    return [surname, formatInitials(given)].filter(Boolean).join(', ');
+}
+
+function appendJournalDetails(container, entry) {
+    if (!entry.journal) return;
+
+    if (entry.volume) {
+        appendText(container, ', ');
+        appendItalic(container, entry.volume);
+    }
+    if (entry.number) appendText(container, `(${entry.number})`);
+    if (entry.pages) appendText(container, `, ${formatPages(entry.pages)}`);
+    appendText(container, '.');
+}
+
+function appendBookChapterDetails(container, entry) {
+    const editorText = formatEditors(entry.editor);
+    if (entry.booktitle || editorText) {
+        appendText(container, 'In ');
+        if (editorText) appendText(container, `${editorText}, `);
+        appendItalic(container, entry.booktitle);
+        if (entry.pages) appendText(container, ` (pp. ${formatPages(entry.pages)})`);
+        appendText(container, '. ');
+    }
+    appendText(container, punctuate(entry.publisher));
+}
+
+function formatEditors(editorField) {
+    if (!editorField) return '';
+    const editors = editorField.split(/\s+and\s+/).map(formatEditorName).filter(Boolean);
+    if (editors.length === 0) return '';
+    let editorList = editors[0];
+    if (editors.length === 2) {
+        editorList = `${editors[0]} & ${editors[1]}`;
+    } else if (editors.length > 2) {
+        editorList = `${editors.slice(0, -1).join(', ')}, & ${editors[editors.length - 1]}`;
+    }
+    return `${editorList} (${editors.length === 1 ? 'Ed.' : 'Eds.'})`;
+}
+
+function formatEditorName(name) {
+    const trimmed = name.trim();
+    if (!trimmed) return '';
+    if (!trimmed.includes(',')) return trimmed;
+
+    const [surname, given] = trimmed.split(',', 2).map(part => part.trim());
+    return [formatInitials(given), surname].filter(Boolean).join(' ');
+}
+
+function formatInitials(givenNames) {
+    return givenNames
+        .split(/\s+/)
+        .filter(Boolean)
+        .map(part => `${part.charAt(0)}.`)
+        .join(' ');
+}
+
+function formatThesisType(type) {
+    if (type.includes('phd')) return 'Doctoral dissertation';
+    if (type.includes('master')) return "Master's thesis";
+    return 'Thesis';
+}
+
+function formatPages(pages) {
+    return pages.replace(/--/g, '-');
+}
+
+function punctuate(text) {
+    if (!text) return '';
+    return /[.!?]$/.test(text) ? text : `${text}.`;
+}
+
+function appendSourceUrl(container, entry) {
+    if (!entry || entry._missing) return;
+
+    const href = entry.doi
+        ? (entry.doi.startsWith('http') ? entry.doi : `https://doi.org/${entry.doi}`)
+        : entry.url;
+    if (!href) return;
+
+    appendText(container, ' ');
+    const anchor = document.createElement('a');
+    anchor.href = href;
+    anchor.textContent = href;
+    anchor.target = '_blank';
+    anchor.rel = 'noopener noreferrer';
+    container.appendChild(anchor);
+}
+
+function appendText(container, text) {
+    if (text) container.appendChild(document.createTextNode(text));
+}
+
+function appendItalic(container, text) {
+    if (!text) return;
+    const em = document.createElement('em');
+    em.textContent = text;
+    container.appendChild(em);
 }
 
 // Render consonant inventory as a table

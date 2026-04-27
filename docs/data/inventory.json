@@ -1,5 +1,6 @@
 {
   "Asho": {
+    "branch": "Southern",
     "dialects": {
       "Hill": {
         "consonants": {
@@ -218,7 +219,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Tignor"
+        ]
       },
       "unspecified": {
         "consonants": {
@@ -426,7 +430,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Otsuka2015"
+        ]
       }
     },
     "all_dialects": [
@@ -435,6 +442,7 @@
     ]
   },
   "Daai": {
+    "branch": "Southern",
     "dialects": {
       "Yang": {
         "consonants": {
@@ -623,7 +631,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "So-Hartmann"
+        ]
       }
     },
     "all_dialects": [
@@ -631,6 +642,7 @@
     ]
   },
   "Falam": {
+    "branch": "Central",
     "dialects": {
       "Falam City": {
         "consonants": {
@@ -814,7 +826,11 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Champeon",
+          "Thuan"
+        ]
       }
     },
     "all_dialects": [
@@ -822,6 +838,7 @@
     ]
   },
   "Hakha Lai": {
+    "branch": "Central",
     "dialects": {
       "unspecified": {
         "consonants": {
@@ -1035,7 +1052,10 @@
             "iau",
             "uai"
           ]
-        }
+        },
+        "sources": [
+          "Peterson2017"
+        ]
       }
     },
     "all_dialects": [
@@ -1043,6 +1063,7 @@
     ]
   },
   "Hmar": {
+    "branch": "Central",
     "dialects": {
       "Haflong": {
         "consonants": {
@@ -1196,7 +1217,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Lahkar"
+        ]
       }
     },
     "all_dialects": [
@@ -1204,6 +1228,7 @@
     ]
   },
   "Hyow": {
+    "branch": "Southern",
     "dialects": {
       "Laitu": {
         "consonants": {
@@ -1380,7 +1405,10 @@
           },
           "diphthongs": {},
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Zakaria2018"
+        ]
       }
     },
     "all_dialects": [
@@ -1388,6 +1416,7 @@
     ]
   },
   "Khumi": {
+    "branch": "Southern",
     "dialects": {
       "Ruma Bazaar, Bangladesh": {
         "consonants": {
@@ -1575,7 +1604,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Peterson2019"
+        ]
       }
     },
     "all_dialects": [
@@ -1583,6 +1615,7 @@
     ]
   },
   "Lamkang": {
+    "branch": "Northwestern",
     "dialects": {
       "Manipur": {
         "consonants": {
@@ -1729,7 +1762,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Thounaojam"
+        ]
       }
     },
     "all_dialects": [
@@ -1737,6 +1773,7 @@
     ]
   },
   "Lutuv": {
+    "branch": "Maraic",
     "dialects": {
       "Hnaring": {
         "consonants": {
@@ -1918,7 +1955,11 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Berkson2022",
+          "Bohnert2022"
+        ]
       }
     },
     "all_dialects": [
@@ -1926,6 +1967,7 @@
     ]
   },
   "Mara": {
+    "branch": "Maraic",
     "dialects": {
       "Sabeu": {
         "consonants": {
@@ -2131,7 +2173,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Arden"
+        ]
       }
     },
     "all_dialects": [
@@ -2139,6 +2184,7 @@
     ]
   },
   "Matu": {
+    "branch": "Southern",
     "dialects": {
       "unspecified": {
         "consonants": {
@@ -2301,7 +2347,10 @@
           },
           "diphthongs": {},
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Shintani2016"
+        ]
       }
     },
     "all_dialects": [
@@ -2309,6 +2358,7 @@
     ]
   },
   "Mindat": {
+    "branch": "Southern",
     "dialects": {
       "Khokhi": {
         "consonants": {
@@ -2515,7 +2565,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Bohnert2025"
+        ]
       }
     },
     "all_dialects": [
@@ -2523,6 +2576,7 @@
     ]
   },
   "Mizo": {
+    "branch": "Central",
     "dialects": {
       "Airawl": {
         "consonants": {
@@ -2725,7 +2779,11 @@
             "uai",
             "uau"
           ]
-        }
+        },
+        "sources": [
+          "Henderson",
+          "Weidert"
+        ]
       },
       "Mizoram": {
         "consonants": {
@@ -2920,7 +2978,10 @@
             "uɑi",
             "uɑu"
           ]
-        }
+        },
+        "sources": [
+          "Chhangte"
+        ]
       }
     },
     "all_dialects": [
@@ -2929,6 +2990,7 @@
     ]
   },
   "Mro Khimi": {
+    "branch": "Southern",
     "dialects": {
       "Wakun": {
         "consonants": {
@@ -3121,7 +3183,10 @@
           },
           "diphthongs": {},
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Hornéy"
+        ]
       },
       "Xautau": {
         "consonants": {
@@ -3319,7 +3384,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Hornéy"
+        ]
       }
     },
     "all_dialects": [
@@ -3328,6 +3396,7 @@
     ]
   },
   "Paite": {
+    "branch": "Northern",
     "dialects": {
       "Lamjang, Tuithapi village": {
         "consonants": {
@@ -3489,7 +3558,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Singh"
+        ]
       }
     },
     "all_dialects": [
@@ -3497,6 +3569,7 @@
     ]
   },
   "Pangkhua": {
+    "branch": "Central",
     "dialects": {
       "Pangkhua Para": {
         "consonants": {
@@ -3673,7 +3746,10 @@
             "iau",
             "uai"
           ]
-        }
+        },
+        "sources": [
+          "Akter"
+        ]
       }
     },
     "all_dialects": [
@@ -3681,6 +3757,7 @@
     ]
   },
   "Senthang": {
+    "branch": "Maraic",
     "dialects": {
       "?": {
         "consonants": {
@@ -3853,7 +3930,10 @@
           },
           "diphthongs": {},
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Watson"
+        ]
       }
     },
     "all_dialects": [
@@ -3861,6 +3941,7 @@
     ]
   },
   "Sizang": {
+    "branch": "Northern",
     "dialects": {
       "?": {
         "consonants": {
@@ -3998,7 +4079,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Sarangthem"
+        ]
       },
       "Buan Man": {
         "consonants": {
@@ -4134,7 +4218,10 @@
             "uei",
             "ɔai"
           ]
-        }
+        },
+        "sources": [
+          "Stern"
+        ]
       }
     },
     "all_dialects": [
@@ -4143,6 +4230,7 @@
     ]
   },
   "Tedim": {
+    "branch": "Northern",
     "dialects": {
       "?": {
         "consonants": {
@@ -4327,7 +4415,10 @@
             "uɑi",
             "uɑu"
           ]
-        }
+        },
+        "sources": [
+          "Otsuka2014"
+        ]
       }
     },
     "all_dialects": [
@@ -4335,6 +4426,7 @@
     ]
   },
   "Thado": {
+    "branch": "Northern",
     "dialects": {
       "?": {
         "consonants": {
@@ -4507,7 +4599,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Haokip"
+        ]
       }
     },
     "all_dialects": [
@@ -4515,6 +4610,7 @@
     ]
   },
   "Zahau": {
+    "branch": "Central",
     "dialects": {
       "?": {
         "consonants": {
@@ -4683,7 +4779,10 @@
           },
           "diphthongs": {},
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Osburne"
+        ]
       }
     },
     "all_dialects": [
@@ -4691,6 +4790,7 @@
     ]
   },
   "Zo": {
+    "branch": "Northern",
     "dialects": {
       "Tonzang": {
         "consonants": {
@@ -4844,7 +4944,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Button"
+        ]
       }
     },
     "all_dialects": [
@@ -4852,6 +4955,7 @@
     ]
   },
   "Zophei": {
+    "branch": "Maraic",
     "dialects": {
       "Lawngtlang": {
         "consonants": {
@@ -5030,7 +5134,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Lotven"
+        ]
       },
       "Nuitah": {
         "consonants": {
@@ -5208,7 +5315,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Lotven"
+        ]
       },
       "Tlawngrang": {
         "consonants": {
@@ -5384,7 +5494,10 @@
             ]
           },
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Lotven"
+        ]
       }
     },
     "all_dialects": [
@@ -5394,6 +5507,7 @@
     ]
   },
   "Zotung": {
+    "branch": "Maraic",
     "dialects": {
       "?": {
         "consonants": {
@@ -5582,7 +5696,10 @@
           },
           "diphthongs": {},
           "triphthongs": []
-        }
+        },
+        "sources": [
+          "Shintani2015"
+        ]
       }
     },
     "all_dialects": [

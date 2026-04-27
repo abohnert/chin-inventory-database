@@ -7,31 +7,43 @@ import csv
 import json
 from collections import defaultdict
 
+from source_utils import split_source_cell
+
 
 def parse_csv(filepath):
     """Parse the CSV and return structured data."""
     # Structure: languages[lang][dialect] = {'consonants': {}, 'vowels': {}}
-    languages = defaultdict(dict)
+    languages = defaultdict(lambda: {'branch': '', 'dialects': {}})
     
-    with open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, 'r', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f)
         for row in reader:
             lang = row['Language']
+            branch = row.get('Branch', '').strip()
             dialect = row['Dialect'] or 'unspecified'
             segment = row['Segment']
             seg_type = row['Type']
+
+            if branch and not languages[lang]['branch']:
+                languages[lang]['branch'] = branch
             
             # Initialize dialect if needed
-            if dialect not in languages[lang]:
-                languages[lang][dialect] = {
+            if dialect not in languages[lang]['dialects']:
+                languages[lang]['dialects'][dialect] = {
                     'consonants': {},
                     'vowels': {
                         'monophthongs': {},
                         'diphthongs': defaultdict(list),
                         'triphthongs': []
-                    }
+                    },
+                    'sources': set()
                 }
-            
+
+            # Track source(s).
+            source = row.get('Source', '').strip()
+            for source_label in split_source_cell(source):
+                languages[lang]['dialects'][dialect]['sources'].add(source_label)
+
             if seg_type == 'consonant':
                 place = row['Place_of_Articulation'] or 'unknown'
                 manner = row['Manner'] or 'unknown'
@@ -39,7 +51,7 @@ def parse_csv(filepath):
                 aspiration = row['Aspiration'] or 'unaspirated'
                 key = f"{voicing}_{aspiration}"
                 
-                cons = languages[lang][dialect]['consonants']
+                cons = languages[lang]['dialects'][dialect]['consonants']
                 if place not in cons:
                     cons[place] = {}
                 if manner not in cons[place]:
@@ -50,7 +62,7 @@ def parse_csv(filepath):
                 
             elif seg_type == 'vowel':
                 vowel_type = row['Vowel_Type'] or 'monophthong'
-                vows = languages[lang][dialect]['vowels']
+                vows = languages[lang]['dialects'][dialect]['vowels']
 
                 if vowel_type == 'diphthong':
                     length = row['Length'] or 'unknown'
@@ -82,20 +94,23 @@ def convert_to_json(data):
     result = {}
     
     for lang, lang_data in sorted(data.items()):
+        dialects = lang_data.get('dialects', {})
         result[lang] = {
+            'branch': lang_data.get('branch', ''),
             'dialects': {},
-            'all_dialects': sorted(lang_data.keys())
+            'all_dialects': sorted(dialects.keys())
         }
         
         # Process each dialect
-        for dialect_key, dialect_data in lang_data.items():
+        for dialect_key, dialect_data in dialects.items():
             result[lang]['dialects'][dialect_key] = {
                 'consonants': {},
                 'vowels': {
                     'monophthongs': {},
                     'diphthongs': {},
                     'triphthongs': []
-                }
+                },
+                'sources': sorted(dialect_data.get('sources', set()))
             }
             
             # Process consonants for this dialect

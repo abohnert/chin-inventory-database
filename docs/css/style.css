@@ -197,6 +197,7 @@ header h1 {
 /* Vowel Chart */
 .ipa-chart.vowel-table {
     width: min(760px, 100%);
+    min-width: 640px;
     margin: 0 auto;
     border-collapse: collapse;
     table-layout: fixed;
@@ -230,8 +231,32 @@ header h1 {
 .complex-vowels {
     margin: 1.25rem auto 0;
     width: min(760px, 100%);
+    min-width: 640px;
     font-size: 1rem;
     line-height: 1.5;
+}
+
+.sources-list {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.source-item {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    padding-left: 2rem;
+    text-indent: -2rem;
+}
+
+.source-item a {
+    color: var(--accent-color);
+    overflow-wrap: anywhere;
+}
+
+.no-sources {
+    color: var(--text-secondary);
+    text-align: center;
 }
 
 footer {
@@ -260,5 +285,9 @@ footer a {
     
     .ipa-chart.vowel-table {
         font-size: 0.85rem;
+    }
+
+    .complex-vowels {
+        font-size: 0.9rem;
     }
 }
