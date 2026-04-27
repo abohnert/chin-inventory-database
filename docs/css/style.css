@@ -1,0 +1,219 @@
+/* IPA Chart Styles */
+
+:root {
+    --bg-primary: #fafafa;
+    --bg-secondary: #ffffff;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --border-color: #ddd;
+    --accent-color: #2c5282;
+    --cell-bg: #f8f9fa;
+    --cell-hover: #e2e8f0;
+    --header-bg: #edf2f7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    color: var(--accent-color);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.language-selector {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.language-selector label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+#language-select {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-secondary);
+    min-width: 250px;
+}
+
+.charts.hidden {
+    display: none;
+}
+
+.welcome {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+}
+
+.language-info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#language-name {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+#dialect-info {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.chart-section {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.chart-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Consonant Chart */
+.ipa-chart.consonant-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.ipa-chart.consonant-table th,
+.ipa-chart.consonant-table td {
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.3rem;
+    text-align: center;
+}
+
+.ipa-chart.consonant-table th {
+    background: var(--header-bg);
+    font-weight: 600;
+}
+
+.ipa-chart.consonant-table .place-header {
+    background: #e6f0ff;
+}
+
+.ipa-chart.consonant-table .manner-header {
+    background: #f0f0f0;
+    font-style: italic;
+}
+
+.ipa-chart.consonant-table td {
+    min-width: 3rem;
+    background: var(--cell-bg);
+}
+
+.ipa-chart.consonant-table td:hover {
+    background: var(--cell-hover);
+}
+
+.ipa-chart.consonant-table .segment {
+    font-size: 1.1rem;
+    display: block;
+}
+
+.ipa-chart.consonant-table .voicing {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 0.15rem;
+}
+
+/* Vowel Chart */
+.vowel-grid {
+    display: grid;
+    grid-template-columns: auto repeat(5, 1fr);
+    gap: 2px;
+    background: var(--border-color);
+    border: 1px solid var(--border-color);
+}
+
+.vowel-cell {
+    background: var(--cell-bg);
+    padding: 0.5rem;
+    text-align: center;
+    min-height: 3rem;
+}
+
+.vowel-cell.header {
+    background: var(--header-bg);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.vowel-cell.height-header {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-weight: 600;
+}
+
+.vowel-cell .segments {
+    font-size: 1.2rem;
+}
+
+.vowel-cell .empty {
+    color: #ccc;
+    font-size: 0.8rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--accent-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ipa-chart.consonant-table {
+        font-size: 0.75rem;
+    }
+    
+    .ipa-chart.consonant-table .segment {
+        font-size: 0.95rem;
+    }
+    
+    .vowel-grid {
+        font-size: 0.85rem;
+    }
+}

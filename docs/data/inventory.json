@@ -1,0 +1,4441 @@
+{
+  "Asho": {
+    "dialects": [
+      "Hill"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labial": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "w"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "implosive": {
+          "voiced_unaspirated": [
+            "ɗ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiceless_aspirated": [
+            "sʰ"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̥"
+          ],
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "approximant": {
+          "voiced_unaspirated": [
+            "ɹ"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "alveolo-palatal": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "ɕ"
+          ]
+        },
+        "affricate": {
+          "voiceless_aspirated": [
+            "tɕʰ"
+          ],
+          "voiceless_unaspirated": [
+            "tɕ"
+          ],
+          "voiced_unaspirated": [
+            "dʑ"
+          ]
+        }
+      },
+      "palatal": {
+        "nasal": {
+          "voiced_unaspirated": [
+            "ɲ"
+          ],
+          "voiceless_unaspirated": [
+            "ɲ̊",
+            "ɲ̥"
+          ]
+        },
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ],
+          "voiceless_unaspirated": [
+            "ŋ̊"
+          ]
+        },
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ],
+          "voiced_unaspirated": [
+            "g"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ],
+          "voiced_unaspirated": [
+            "ɦ"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "central": {
+          "rounded": [
+            "ʉ"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "near-high": {
+        "near-front": {
+          "unrounded": [
+            "ɪ"
+          ],
+          "rounded": [
+            "ʏ"
+          ]
+        },
+        "near-back": {
+          "rounded": [
+            "ʊ"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɤ"
+          ],
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "low-mid": {
+        "front": {
+          "unrounded": [
+            "ɛ"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "ɔ"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "au",
+            "ei",
+            "ɑɪ",
+            "ɑʊ"
+          ]
+        }
+      }
+    }
+  },
+  "Daai": {
+    "dialects": [
+      "Yang"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labial": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "w"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiceless_aspirated": [
+            "sʰ"
+          ]
+        },
+        "lateral fricative": {
+          "voiceless_unaspirated": [
+            "ɬ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̊"
+          ],
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "x"
+          ],
+          "voiced_unaspirated": [
+            "ɣ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "ŋ̊"
+          ],
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i",
+            "iː"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɯ",
+            "ɯː"
+          ],
+          "rounded": [
+            "u",
+            "u:"
+          ]
+        }
+      },
+      "low-mid": {
+        "front": {
+          "unrounded": [
+            "ɛ",
+            "ɛː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "ɔ",
+            "ɔː"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə",
+            "əː"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a",
+            "a:"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "aɯ",
+            "aːi",
+            "aːɯ",
+            "ui",
+            "uːi",
+            "ɔi",
+            "ɔu",
+            "ɔːi",
+            "əi",
+            "əɯ",
+            "əːi",
+            "ɛi",
+            "ɛːi",
+            "ɯi",
+            "ɯːi"
+          ]
+        }
+      }
+    }
+  },
+  "Falam": {
+    "dialects": [
+      "Falam City"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ]
+        }
+      },
+      "labial": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "w"
+          ]
+        }
+      },
+      "dental": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t̪"
+          ],
+          "voiceless_aspirated": [
+            "t̪ʰ"
+          ],
+          "voiced_unaspirated": [
+            "d̪"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ]
+        },
+        "affricate": {
+          "voiceless_unaspirated": [
+            "ts"
+          ]
+        },
+        "lateral affricate": {
+          "voiceless_unaspirated": [
+            "tɬ"
+          ],
+          "voiceless_aspirated": [
+            "tɬʰ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̊"
+          ],
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "tap/flap": {
+          "voiceless_unaspirated": [
+            "ɾ̥"
+          ],
+          "voiced_unaspirated": [
+            "ɾ"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "ŋ̊"
+          ],
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "low-mid": {
+        "front": {
+          "unrounded": [
+            "ɛ"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "ɔ"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ia",
+            "ua"
+          ]
+        }
+      }
+    }
+  },
+  "Hakha Lai": {
+    "dialects": [],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "dental": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t̪"
+          ],
+          "voiceless_aspirated": [
+            "t̪ʰ"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiced_unaspirated": [
+            "d"
+          ],
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "affricate": {
+          "voiceless_unaspirated": [
+            "ts"
+          ],
+          "voiceless_aspirated": [
+            "tsʰ"
+          ]
+        },
+        "lateral affricate": {
+          "voiceless_unaspirated": [
+            "tl",
+            "tɬ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̥"
+          ],
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiceless_unaspirated": [
+            "r̥"
+          ]
+        },
+        "lateral fricative": {
+          "voiceless_unaspirated": [
+            "ɬ"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "ŋ̊"
+          ],
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "near-high": {
+        "near-front": {
+          "unrounded": [
+            "ɪ"
+          ]
+        }
+      },
+      "high": {
+        "front": {
+          "unrounded": [
+            "iː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u",
+            "uː"
+          ]
+        }
+      },
+      "low-mid": {
+        "front": {
+          "unrounded": [
+            "ɛ"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "ɔː"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "eː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "aː"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "aːi",
+            "aːu",
+            "eu",
+            "eːu",
+            "ia",
+            "ia:",
+            "iau",
+            "iu",
+            "oi",
+            "ou",
+            "oːi",
+            "ua",
+            "uai",
+            "uaː",
+            "ui",
+            "ɛi"
+          ]
+        }
+      }
+    }
+  },
+  "Hmar": {
+    "dialects": [
+      "Haflong"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiced_unaspirated": [
+            "r"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "palatal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "c"
+          ],
+          "voiced_unaspirated": [
+            "ɟ"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "au",
+            "ei",
+            "iu",
+            "oi",
+            "ou",
+            "ui"
+          ]
+        }
+      }
+    }
+  },
+  "Hyow": {
+    "dialects": [
+      "Laitu"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labial": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "w"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "affricate": {
+          "voiceless_unaspirated": [
+            "ts"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̥"
+          ],
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        },
+        "approximant": {
+          "voiced_unaspirated": [
+            "ɹ"
+          ]
+        }
+      },
+      "postalveolar": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "ʃ"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiceless_unaspirated": [
+            "j̊"
+          ],
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "ŋ̊"
+          ],
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "central": {
+          "rounded": [
+            "ʉ"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "central": {
+          "unrounded": [
+            "ɘ"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "low-mid": {
+        "back": {
+          "rounded": [
+            "ɔ"
+          ]
+        }
+      },
+      "near-low": {
+        "front": {
+          "unrounded": [
+            "æ"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      }
+    }
+  },
+  "Khumi": {
+    "dialects": [
+      "Ruma Bazaar, Bangladesh"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ]
+        },
+        "lateral affricate": {
+          "voiceless_unaspirated": [
+            "tɬ"
+          ],
+          "voiceless_aspirated": [
+            "tʰɬ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiced_unaspirated": [
+            "r"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ]
+        }
+      },
+      "postalveolar": {
+        "affricate": {
+          "voiceless_unaspirated": [
+            "tʃ"
+          ],
+          "voiced_unaspirated": [
+            "dʒ"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "raised high-mid": {
+        "front": {
+          "unrounded": [
+            "e̝"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "central": {
+          "unrounded": [
+            "ɘ"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɤ"
+          ],
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "near-low": {
+        "front": {
+          "unrounded": [
+            "æ"
+          ]
+        }
+      },
+      "low-mid": {
+        "back": {
+          "rounded": [
+            "ɔ"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "eu",
+            "iu",
+            "ui",
+            "ɔi"
+          ]
+        }
+      }
+    }
+  },
+  "Lamkang": {
+    "dialects": [
+      "Manipur"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labial": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "w"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiced_unaspirated": [
+            "r"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "alveolo-palatal": {
+        "affricate": {
+          "voiceless_unaspirated": [
+            "tɕ"
+          ],
+          "voiced_unaspirated": [
+            "dʑ"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "au",
+            "oi",
+            "ui",
+            "əi",
+            "əu"
+          ]
+        }
+      }
+    }
+  },
+  "Lutuv": {
+    "dialects": [
+      "Hnaring"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "affricate": {
+          "voiceless_unaspirated": [
+            "ts"
+          ],
+          "voiceless_aspirated": [
+            "tsʰ"
+          ]
+        },
+        "lateral affricate": {
+          "voiceless_unaspirated": [
+            "tl"
+          ],
+          "voiceless_aspirated": [
+            "tlʰ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̥"
+          ],
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiceless_unaspirated": [
+            "r̥"
+          ],
+          "voiced_unaspirated": [
+            "r"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ],
+          "rounded": [
+            "y"
+          ]
+        },
+        "central": {
+          "unrounded": [
+            "ɨ"
+          ],
+          "rounded": [
+            "ʉ"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɯ"
+          ],
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      },
+      "low-mid": {
+        "back": {
+          "rounded": [
+            "ɔ"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ie",
+            "uo",
+            "yə",
+            "ɯe"
+          ]
+        }
+      }
+    }
+  },
+  "Mara": {
+    "dialects": [
+      "Sabeu"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ],
+          "voiced_aspirated": [
+            "mʰ"
+          ]
+        }
+      },
+      "labial": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "w"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ],
+          "voiced_aspirated": [
+            "nʰ"
+          ]
+        },
+        "trill": {
+          "voiced_unaspirated": [
+            "r"
+          ],
+          "voiceless_unaspirated": [
+            "r̥"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "approximant": {
+          "voiceless_unaspirated": [
+            "ɹ̥"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ],
+          "voiceless_unaspirated": [
+            "l̥"
+          ]
+        }
+      },
+      "alveolo-palatal": {
+        "affricate": {
+          "voiceless_unaspirated": [
+            "tɕ"
+          ],
+          "voiceless_aspirated": [
+            "tɕʰ"
+          ],
+          "voiced_unaspirated": [
+            "dʑ"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "glottal": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ],
+          "rounded": [
+            "y"
+          ]
+        },
+        "central": {
+          "unrounded": [
+            "ɨ"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "lowered high": {
+        "front": {
+          "unrounded": [
+            "i̞"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u̞"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ],
+          "rounded": [
+            "ø"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "low": {
+        "back": {
+          "unrounded": [
+            "ɑ"
+          ]
+        }
+      },
+      "lowered low": {
+        "back": {
+          "unrounded": [
+            "ɑ̞"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "eɪ",
+            "øɪ",
+            "ɐʊ",
+            "ɑi"
+          ]
+        }
+      }
+    }
+  },
+  "Matu": {
+    "dialects": [],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ]
+        },
+        "implosive": {
+          "voiced_unaspirated": [
+            "ɓ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ]
+        },
+        "implosive": {
+          "voiced_unaspirated": [
+            "ɗ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiceless_aspirated": [
+            "sʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiceless_unaspirated": [
+            "r̥"
+          ],
+          "voiced_unaspirated": [
+            "r"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i",
+            "iː"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɯ",
+            "ɯː"
+          ],
+          "rounded": [
+            "u",
+            "uː"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e",
+            "eː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o",
+            "oː"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə",
+            "əː"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a",
+            "aː"
+          ]
+        }
+      }
+    }
+  },
+  "Mindat": {
+    "dialects": [
+      "Khokhi"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "affricate": {
+          "voiceless_unaspirated": [
+            "ts"
+          ]
+        },
+        "lateral fricative": {
+          "voiceless_unaspirated": [
+            "ɬ"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̥"
+          ],
+          "voiced_unaspirated": [
+            "n"
+          ]
+        }
+      },
+      "alveolo-palatal": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "ɕ"
+          ],
+          "voiced_unaspirated": [
+            "ʑ"
+          ]
+        }
+      },
+      "palatal": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "ç"
+          ],
+          "voiced_unaspirated": [
+            "ʝ"
+          ]
+        },
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "affricate": {
+          "voiceless_unaspirated": [
+            "kx"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "ŋ̊"
+          ],
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "uvular": {
+        "fricative": {
+          "voiced_unaspirated": [
+            "ʁ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "central": {
+          "unrounded": [
+            "ɨ"
+          ],
+          "rounded": [
+            "ʉ"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɑ"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ei",
+            "oi",
+            "ui",
+            "œi"
+          ]
+        }
+      }
+    }
+  },
+  "Mizo": {
+    "dialects": [
+      "Airawl",
+      "Mizoram"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "dental": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t̪"
+          ],
+          "voiceless_aspirated": [
+            "t̪ʰ"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiced_unaspirated": [
+            "d"
+          ],
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "affricate": {
+          "voiceless_unaspirated": [
+            "ts"
+          ],
+          "voiceless_aspirated": [
+            "tsʰ"
+          ]
+        },
+        "lateral affricate": {
+          "voiceless_unaspirated": [
+            "tl"
+          ],
+          "voiceless_aspirated": [
+            "tlʰ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̥"
+          ],
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiceless_unaspirated": [
+            "r̥"
+          ],
+          "voiced_unaspirated": [
+            "r"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "ŋ̊"
+          ],
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i",
+            "iː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u",
+            "uː"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e",
+            "eː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o",
+            "oː"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɑ"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "au",
+            "aːi",
+            "aːu",
+            "ei",
+            "eu",
+            "eːi",
+            "eːu",
+            "ia",
+            "iai",
+            "iau",
+            "iɑ",
+            "iɑi",
+            "iɑu",
+            "iːu",
+            "oi",
+            "ou",
+            "oːi",
+            "ua",
+            "uai",
+            "uau",
+            "ui",
+            "uɑ",
+            "uɑi",
+            "uɑu",
+            "uːi",
+            "ɑi",
+            "ɑu",
+            "ɑːi",
+            "ɑːu",
+            "ɔi",
+            "ɔu",
+            "ɔːi",
+            "ɛi",
+            "ɛu",
+            "ɛːi",
+            "ɛːu"
+          ]
+        }
+      },
+      "low-mid": {
+        "front": {
+          "unrounded": [
+            "ɛ",
+            "ɛː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "ɔ",
+            "ɔː"
+          ]
+        }
+      }
+    }
+  },
+  "Mro Khimi": {
+    "dialects": [
+      "Wakun",
+      "Xautau"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiceless_aspirated": [
+            "sʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "approximant": {
+          "voiced_unaspirated": [
+            "ɹ"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ],
+          "voiced_unaspirated": [
+            "g"
+          ]
+        }
+      },
+      "uvular": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "χ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i",
+            "ĩ"
+          ],
+          "rounded": [
+            "y",
+            "ỹ"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɯ",
+            "ɯ̃"
+          ],
+          "rounded": [
+            "u",
+            "ũ"
+          ]
+        }
+      },
+      "near-high": {
+        "near-front": {
+          "unrounded": [
+            "ɪ"
+          ],
+          "rounded": [
+            "ʏ"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e",
+            "ẽ"
+          ],
+          "rounded": [
+            "ø",
+            "ø̃"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɤ",
+            "ɤ̃"
+          ],
+          "rounded": [
+            "o",
+            "õ"
+          ]
+        }
+      },
+      "low-mid": {
+        "front": {
+          "unrounded": [
+            "ɛ",
+            "ɛ̃"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a",
+            "ã"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɑ",
+            "ɑ̃"
+          ],
+          "rounded": [
+            "ɒ",
+            "ɒ̃"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "au"
+          ]
+        }
+      }
+    }
+  },
+  "Paite": {
+    "dialects": [
+      "Lamjang, Tuithapi village"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "palatal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "c"
+          ],
+          "voiced_unaspirated": [
+            "ɟ"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiced_unaspirated": [
+            "g"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "x"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i",
+            "iː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u",
+            "uː"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e",
+            "eː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o",
+            "oː"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə",
+            "əː"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a",
+            "aː"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "au",
+            "ei",
+            "eu",
+            "ia",
+            "iu",
+            "ua",
+            "ui",
+            "əi",
+            "əu"
+          ]
+        }
+      }
+    }
+  },
+  "Pangkhua": {
+    "dialects": [
+      "Pangkhua Para"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "dental": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t̪"
+          ],
+          "voiceless_aspirated": [
+            "t̪ʰ"
+          ],
+          "voiced_unaspirated": [
+            "d̪"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "labial": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "w"
+          ]
+        }
+      },
+      "alveolar": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "affricate": {
+          "voiceless_unaspirated": [
+            "ts"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiced_unaspirated": [
+            "r"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        }
+      },
+      "low": {
+        "back": {
+          "unrounded": [
+            "ɑ"
+          ],
+          "rounded": [
+            "ɒ"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə"
+          ]
+        }
+      },
+      "low-mid": {
+        "central": {
+          "rounded": [
+            "ɞ"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ei",
+            "ia",
+            "iau",
+            "ou",
+            "ua",
+            "uai",
+            "ɑi",
+            "ɒi",
+            "əi",
+            "əu"
+          ]
+        }
+      }
+    }
+  },
+  "Senthang": {
+    "dialects": [
+      "?"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "dental": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t̪"
+          ],
+          "voiceless_aspirated": [
+            "t̪ʰ"
+          ],
+          "voiced_unaspirated": [
+            "d̪"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̪̊"
+          ],
+          "voiced_unaspirated": [
+            "n̪"
+          ]
+        }
+      },
+      "alveolar": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "affricate": {
+          "voiceless_unaspirated": [
+            "ts"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "x"
+          ],
+          "voiced_unaspirated": [
+            "ɣ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɤ"
+          ],
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "low-mid": {
+        "front": {
+          "unrounded": [
+            "ɛ"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "ɔ"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      }
+    }
+  },
+  "Sizang": {
+    "dialects": [
+      "?",
+      "Buan Man"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "au",
+            "ei",
+            "eu",
+            "ia",
+            "ie",
+            "oai",
+            "oi",
+            "ua",
+            "uei",
+            "ui",
+            "ɔai",
+            "ɔi",
+            "əi",
+            "əu"
+          ]
+        }
+      }
+    }
+  },
+  "Tedim": {
+    "dialects": [
+      "?"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l",
+            "lˀ"
+          ]
+        }
+      },
+      "alveolo-palatal": {
+        "affricate": {
+          "voiceless_unaspirated": [
+            "tɕ"
+          ],
+          "voiceless_aspirated": [
+            "tɕʰ"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiced_unaspirated": [
+            "g"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "x"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i",
+            "iː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u",
+            "uː"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "low-mid": {
+        "front": {
+          "unrounded": [
+            "ɛː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "ɔː"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a",
+            "aː"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ei",
+            "eu",
+            "ia",
+            "iei",
+            "iu",
+            "iɑi",
+            "iɑu",
+            "oi",
+            "ou",
+            "ua",
+            "ui",
+            "uou",
+            "uɑi",
+            "uɑu",
+            "uːi",
+            "ɑi",
+            "ɑu",
+            "ɑːu",
+            "ɔːi",
+            "ɛ:u",
+            "ɛːi"
+          ]
+        }
+      }
+    }
+  },
+  "Thado": {
+    "dialects": [
+      "?"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiced_unaspirated": [
+            "r"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "postalveolar": {
+        "affricate": {
+          "voiceless_unaspirated": [
+            "tʃ"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiced_unaspirated": [
+            "g"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "x"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "low-mid": {
+        "front": {
+          "unrounded": [
+            "ɛ"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "ɔ"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      },
+      "high-mid": {
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "au",
+            "ei",
+            "eu",
+            "ie",
+            "iu",
+            "oi",
+            "ou",
+            "ui",
+            "ɔi",
+            "ɔu",
+            "əu"
+          ]
+        }
+      }
+    }
+  },
+  "Zahau": {
+    "dialects": [
+      "?"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "labial": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "w"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "lateral affricate": {
+          "voiceless_unaspirated": [
+            "tl"
+          ],
+          "voiceless_aspirated": [
+            "tlʰ"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̥"
+          ],
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiceless_unaspirated": [
+            "r̥"
+          ],
+          "voiced_unaspirated": [
+            "r"
+          ]
+        }
+      },
+      "postalveolar": {
+        "affricate": {
+          "voiceless_unaspirated": [
+            "tʃ"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "ŋ̊"
+          ],
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      }
+    }
+  },
+  "Zo": {
+    "dialects": [
+      "Tonzang"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "labial": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "w"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "palatal": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiced_unaspirated": [
+            "g"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "x"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "au",
+            "ei",
+            "eu",
+            "oi",
+            "ou",
+            "ui"
+          ]
+        }
+      }
+    }
+  },
+  "Zophei": {
+    "dialects": [
+      "Lawngtlang",
+      "Nuitah",
+      "Tlawngrang"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ],
+          "voiced_unaspirated": [
+            "b"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "m̥"
+          ],
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ],
+          "voiced_unaspirated": [
+            "d"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ],
+          "voiced_unaspirated": [
+            "z"
+          ]
+        },
+        "affricate": {
+          "voiceless_unaspirated": [
+            "ts"
+          ],
+          "voiceless_aspirated": [
+            "tsʰ"
+          ]
+        },
+        "lateral affricate": {
+          "voiceless_unaspirated": [
+            "tl",
+            "tɬ"
+          ]
+        },
+        "nasal": {
+          "voiceless_unaspirated": [
+            "n̥"
+          ],
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "lateral approximant": {
+          "voiceless_unaspirated": [
+            "l̥"
+          ],
+          "voiced_unaspirated": [
+            "l"
+          ]
+        },
+        "approximant": {
+          "voiceless_unaspirated": [
+            "ɹ̥"
+          ],
+          "voiced_unaspirated": [
+            "ɹ"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i",
+            "iː"
+          ],
+          "rounded": [
+            "y",
+            "yː"
+          ]
+        },
+        "central": {
+          "unrounded": [
+            "ɨː"
+          ],
+          "rounded": [
+            "ʉː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "u",
+            "uː"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e",
+            "eː"
+          ],
+          "rounded": [
+            "øː"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o",
+            "o:",
+            "oː"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a",
+            "a:",
+            "aː"
+          ]
+        }
+      },
+      "unknown": {
+        "unknown": {
+          "unknown": [
+            "ai",
+            "au",
+            "ei",
+            "ia",
+            "ie",
+            "io",
+            "oi",
+            "ua",
+            "ue",
+            "ui"
+          ]
+        }
+      }
+    }
+  },
+  "Zotung": {
+    "dialects": [
+      "?"
+    ],
+    "consonants": {
+      "bilabial": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "p"
+          ],
+          "voiceless_aspirated": [
+            "pʰ"
+          ]
+        },
+        "implosive": {
+          "voiced_unaspirated": [
+            "ɓ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "m"
+          ]
+        }
+      },
+      "labiodental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "f"
+          ],
+          "voiced_unaspirated": [
+            "v"
+          ]
+        }
+      },
+      "interdental": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "θ"
+          ]
+        }
+      },
+      "labial": {
+        "approximant": {
+          "voiced_unaspirated": [
+            "w"
+          ]
+        }
+      },
+      "alveolar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "t"
+          ],
+          "voiceless_aspirated": [
+            "tʰ"
+          ]
+        },
+        "implosive": {
+          "voiced_unaspirated": [
+            "ɗ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "s"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "n"
+          ]
+        },
+        "trill": {
+          "voiced_unaspirated": [
+            "r"
+          ]
+        },
+        "lateral approximant": {
+          "voiced_unaspirated": [
+            "l"
+          ]
+        }
+      },
+      "palatal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "c"
+          ],
+          "voiceless_aspirated": [
+            "cʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ɲ"
+          ]
+        },
+        "approximant": {
+          "voiced_unaspirated": [
+            "j"
+          ]
+        }
+      },
+      "alveolo-palatal": {
+        "fricative": {
+          "voiceless_unaspirated": [
+            "ɕ"
+          ]
+        }
+      },
+      "velar": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "k"
+          ],
+          "voiceless_aspirated": [
+            "kʰ"
+          ]
+        },
+        "nasal": {
+          "voiced_unaspirated": [
+            "ŋ"
+          ]
+        }
+      },
+      "glottal": {
+        "plosive": {
+          "voiceless_unaspirated": [
+            "ʔ"
+          ]
+        },
+        "fricative": {
+          "voiceless_unaspirated": [
+            "h"
+          ]
+        }
+      }
+    },
+    "vowels": {
+      "high": {
+        "front": {
+          "unrounded": [
+            "i"
+          ]
+        },
+        "back": {
+          "unrounded": [
+            "ɯ"
+          ],
+          "rounded": [
+            "u"
+          ]
+        }
+      },
+      "high-mid": {
+        "front": {
+          "unrounded": [
+            "e"
+          ]
+        },
+        "back": {
+          "rounded": [
+            "o"
+          ]
+        }
+      },
+      "near-low": {
+        "front": {
+          "unrounded": [
+            "æ"
+          ]
+        }
+      },
+      "mid": {
+        "central": {
+          "unrounded": [
+            "ə"
+          ]
+        }
+      },
+      "low": {
+        "central": {
+          "unrounded": [
+            "a"
+          ]
+        }
+      }
+    }
+  }
+}

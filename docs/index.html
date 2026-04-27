@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chin Language IPA Inventories</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Chin Language Phonological Inventories</h1>
+        <p class="subtitle">Interactive IPA charts for Kuki-Chin languages</p>
+    </header>
+
+    <main>
+        <section class="language-selector">
+            <label for="language-select">Select Language:</label>
+            <select id="language-select">
+                <option value="">-- Choose a language --</option>
+            </select>
+        </section>
+
+        <section id="charts-container" class="charts hidden">
+            <div class="language-info">
+                <h2 id="language-name"></h2>
+                <p id="dialect-info"></p>
+            </div>
+
+            <div class="chart-section">
+                <h3>Consonant Inventory</h3>
+                <div id="consonant-chart" class="ipa-chart"></div>
+            </div>
+
+            <div class="chart-section">
+                <h3>Vowel Inventory</h3>
+                <div id="vowel-chart" class="ipa-chart"></div>
+            </div>
+        </section>
+
+        <section id="welcome-message" class="welcome">
+            <p>Select a language from the dropdown above to view its IPA phonological inventory.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Data source: <a href="https://github.com/chin-linguistics/chin-inventory-database">chin-inventory-database</a></p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
